@@ -7,50 +7,53 @@
 </head>
 <body>
 
-<h1>Adjoint Optimisation and Machine Learning-Based Tuning of the GEKO Turbulence Model</h1>
+<h1>Adjoint Optimisation and Machine Learning-Based Tuning of the GEKO Turbulence Model for Improved 
+    Aircraft Performance Predictions (Work in Progress)</h1>
 
 <h3>Context</h3>
 <p>
-This MSc thesis project investigated limitations in current RANS turbulence modelling approaches
-used in aircraft aerodynamic design, with a focus on improving prediction accuracy using adjoint
-optimisation and machine learning techniques.
+Computational Fluid Dynamics is an essential tool in aircraft design, providing one of the most 
+    cost-effective means of evaluating an aircraft's aerodynamic performance. As the aviation industry 
+    aims to achieve net-zero carbon emissions by 2050, there is an increased reliance on CFD to support 
+    the development of more fuel-efficient aircraft designs. However, industrial CFD is currently limited 
+    in its ability to accurately predict turbulent flow behaviour, often yielding poor and unreliable 
+    performance predictions on aircraft simulations. The GEKO turbulence model has been introduced to 
+    address some of these limitations by allowing its parameters to be calibrated to match the expected 
+    turbulent flow behaviour. However, selecting optimal GEKO parameters is a complex task that requires 
+    expert judgement and guidance based on experimental data. 
+My MSc thesis will investigate the capabilities of the GEKO turbulence model to improve predictions of 
+    aircraft drag polars and surface pressure distributions compared with current RANS modelling procedures. 
+    The work will utilise numerical techniques, such as adjoint optimisation and machine learning, to 
+    systematically identify the set of GEKO coefficients that yields the best predictions relative to 
+    experimental data. The long-term goal of this research is to provide a computationally efficient tool 
+    that enables more reliable aircraft performance predictions for use during the early stages of aircraft 
+    design.
+
 </p>
 
 <h3>Objectives</h3>
 <ul>
-    <li>Evaluate baseline performance of the GEKO turbulence model</li>
-    <li>Apply adjoint optimisation techniques to improve aerodynamic prediction accuracy</li>
-    <li>Investigate the use of machine learning for turbulence model tuning</li>
+    <li>Investigate the improvements in aircraft performance predictions of an aircraft by calibrating the 
+        model at multiple points across the design space. </li>
+    <li>Apply numerical techniques such as adjoint optimisation and machine learning to assist in finding 
+        the optimal set of GEKO parameters.</li>
+    <li>Assess the generalisability of the tuning framework on a secondary aircraft geometry.</li>
+    <li>Investigate improvements in performance predictions by using the error in surface pressure 
+        distribution as the optimisation target.</li>
 </ul>
 
 <h3>Methodology</h3>
-<ul>
-    <li>CFD simulations performed using ANSYS Fluent</li>
-    <li>Airframe geometries analysed under representative flow conditions</li>
-    <li>Adjoint-based sensitivity analysis used to guide optimisation</li>
-    <li>Python used for data processing, automation, and ML workflow</li>
-</ul>
-
-<h3>Results</h3>
-<p>
-The optimised model demonstrated improved agreement with reference aerodynamic performance
-metrics compared to baseline RANS predictions, highlighting the potential for targeted turbulence
-model tuning in early-stage aircraft design.
-</p>
-
-<h3>Engineering Insight</h3>
-<p>
-This project demonstrated how advanced numerical methods and optimisation techniques can be
-directly applied to address practical limitations in aircraft CFD prediction, bridging the gap
-between research methods and real-world engineering design workflows.
-</p>
-
-<h3>Tools Used</h3>
-<ul>
-    <li>ANSYS Fluent</li>
-    <li>Python</li>
-    <li>Machine Learning (TensorFlow / PyTorch)</li>
-</ul>
+<ol>
+    <li>Mesh and validate baseline RANS model. </li>
+    <li>Set up an adjoint tuning framework using ANSYS Fluent to optimise the GEKO coefficients aimed at 
+        minimising the error between the experimental result.</li>
+    <li>Generate a database of input design parameters and associated optimised GEKO coefficients and train a 
+        neural network to learn the mapping between them.</li>
+    <li>Using the trained neural network, find the optimal set of GEKO coefficients and apply them to an unseen 
+        aircraft geometry. Compare with baseline results.</li>
+    <li>Using the average error in surface pressure distribution as the optimisation target, find a new set of 
+        tuned GEKO coefficients and assess improvements in the model predictive capabilities.</li>
+</ol>
 
 <p>
 <a href="../index.html">← Back to homepage</a>
