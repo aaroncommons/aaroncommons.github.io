@@ -2,83 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Machine-Learning Time-Dependent Density Functional Theory on a Lattice</title>
+    <title>Finite Element Analysis of a Self-Expanding Nitinol Stent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 <h1>Machine-Learning Time-Dependent Density Functional Theory on a Lattice</h1>
 
-<h3>Project Context and Objective</h3>
-<p>
-Accurately modelling the time evolution of a system of interacting particles is a fundamental 
-challenge in physics. Many body systems, including the gravitational interactions of celestial 
-bodies, the behaviour of molecules in a gas, and quantum systems, exhibit complex, nonlinear 
-behaviour arising from particle interactions. As the system size increases, direct numerical 
-simulation becomes exponentially more computationally expensive, prompting the use of reduced 
-representations and data-driven modelling approaches.
-My undergraduate thesis investigated the use of machine learning to predict the time evolution 
-of a many-body quantum system defined on a lattice. The objective was to assess the capabilities 
-of a trained neural network on a reduced representation of the system, enabling investigation of 
-a scaled system without the associated computational cost. This would provide a more efficient tool 
-than direct numerical simulations of the system.
-
-</p>
-
-<h3>Methodology</h3>
-<ul>
-    <li>Using Python, I developed a numerical simulation of the interacting particle system based on 
-        the governing many-body equations.</li>
-    <li>Generated a dataset for the time evolution of the system for a range of evenly sampled initial 
-        conditions.</li>
-    <li>Trained a neural network to predict the system&#39;s time evolution directly from its initial state.</li>
-    <li>Evaluated the performance of the model using a reduced representation of the system to improve the 
-        computational efficiency.</li>
-    <li>Investigated the influence of varying the interaction strength between particles on the predictive 
-        accuracy of the model.</li>
-</ul>
-    
-<h3>Results</h3>
-<ul>
-  <li>
-    Successfully trained a neural network to accurately predict the time evolution of the system given 
-    a set of initial conditions.
-  </li>
-</ul>
 <figure class="centered-figure" style="text-align: center;">
   <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
 </figure>
+    
+<h3>Project Context and Objective</h3>
+<p>
+Nitinol stents are a form of cardiovascular stents that are designed to reopen blockages in arteries and restore blood flow to vital organs around the body. Nitinol is a nickel-titanium alloy whose unique properties make it an excellent candidate for use in self-expanding stents. Firstly, nitinol exhibits a super elasticity, allowing elastic strain up to 7%. This results in a ‘shape memory’ effect, where the stent will return to its original shape after deployment. The material also requires a larger force to load it than unloading. This results in a chronic outward force (COF) acting on the artery wall, keeping it open and preventing further blockages. The stent must be designed carefully such that the outward force is strong enough to keep the artery open, but not to damage the artery wall. However, given the constant cyclic loading experienced during blood flow cycles, the stent is subject to several forms of fatigue, often resulting in plasticity and eventually major fractures can occur [ref]. 
+In this project, a non-linear finite element model of a self-expanding nitinol stent was developed using Abaqus CAE. The objective of the project was to capture the super elastic behaviour of nitinol, showing the chronic outward force exerted by the stent, evaluate the fatigue performance using a Goodman diagram and investigate the effect of s small design modification to the stent link on the fatigue performance.
 
-<ul>
-  <li>
-    Demonstrated that for the reduced representation of the system, the predictive accuracy of the model 
-    was significantly reduced. The model must be trained on an increased number of timesteps to make accurate 
-    long-term predictions.
-  </li>
-</ul>
-<figure class="centered-figure" style="text-align: center;">
-  <img src="images/SO_Evolution_VarTimesteps.png" alt="Reduced Representation" style="display:block; margin:auto; width:30%;">
-  <figcaption>
-    Reconstruction of the system time evolution by a neural network given variable number of input timesteps of the system's reduced representation
-  </figcaption>
-</figure>
 
-<ul>
-  <li>
-    By varying the relative interaction strength between the particles in the model, it was shown that the 
-    intermediate interaction regime exhibited the most chaotic particle behaviour that was most difficult 
-    for the ML model to predict.
-  </li>
-</ul>
-<figure class="centered-figure" style="text-align: center;">
-  <img src="images/MAEvsInteractionStrength.png" alt="Interaction Strength" style="display:block; margin:auto; width:30%;">
-  <figcaption>
-    Neural network accuracy for varying particle-to-particle interaction strength
-  </figcaption>
-</figure>
+</p>
+
+<h3>Model Development</h3>
+<ol>
+    <li>Geometry & Symmetry:
+    The full stent consists of 12 repeating units. One of these units was modelled and periodic boundary conditions were applied to enforce the cylindrical symmetry of the stent unit. A rigid exterior crimper was used to simulate the crimping of the stent during deployment and operation during blood pressure cycles. A hard normal contact and frictionless tangential contact were applied between the outer stent surface and inner crimp surface.</li>
+    <li>Mesh Strategy:
+    A structured hexahedral mesh was used with local refinements in the regions of high curvature. A mesh convergence study was performed on the maximum von Mises stress to ensure the results were mesh independent.</li>
+    <li>Loading and Analysis Steps:
+    To simulate the forces acting on the stent during deployment and operation, three displacement steps were applied to the outer crimper.</li>
+    <li>Design Modification
+    Five different link thicknesses (4mm, 8mm, 12mm, 15mm, 20mm) were tested to determine the effects on the COF and fatigue performance of the design. </li>
+</ol>
+    
+<h3>Results</h3>
+<h3>Methodology</h3>
+<ol>
+    <li>Stress Distribution</li>
+    <li>Chronic Outward Force (COF)</li>
+    <li>Fatigue Assessment</li>
+</ol>
 
 <h3>Transferable Engineering Skills</h3>
 <p>
@@ -91,12 +55,6 @@ applicable to a simulation and modelling engineering role:
     <li>Generating and processing large datasets from simulations.</li>
     <li>Designing, training and evaluating a neural network for a time series prediction task.</li>
 </ul>
-
-<p>
-<a href="../documents/Undergrad_Thesis_Report.pdf">
-            Full thesis document available here
-        </a>
-</p>
 
 <p>
 <a href="../index.html">← Back to homepage</a>
