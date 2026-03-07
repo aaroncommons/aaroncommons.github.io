@@ -23,14 +23,14 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     The full stent consists of 12 repeating units. One of these units was modelled and periodic boundary conditions were applied to enforce the cylindrical symmetry of the stent unit. A rigid exterior crimper was used to simulate the crimping of the stent during deployment and operation during blood pressure cycles. A hard normal contact and frictionless tangential contact were applied between the outer stent surface and inner crimp surface.</li>
     
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_stent_unit.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
     </figure>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_stent_crimp_assembley.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -40,7 +40,7 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     A structured hexahedral mesh was used with local refinements in the regions of high curvature. A mesh convergence study was performed on the maximum von Mises stress to ensure the results were mesh independent.</li>
     
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_mesh_convergence.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -50,7 +50,7 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     To simulate the forces acting on the stent during deployment and operation, three displacement steps were applied to the outer crimper.</li>
     
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_loading_steps.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -60,7 +60,7 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     Five different link thicknesses (4mm, 8mm, 12mm, 15mm, 20mm) were tested to determine the effects on the COF and fatigue performance of the design.</li>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_link_thickness.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -74,7 +74,7 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     For the stent, the peak von Mises stress of 695 MPa occurs at the curved region next to the link.</li>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_stent_stress.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -84,7 +84,7 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     By plotting the radial force on the crimp during the various loading stages, a clear hysteresis is observed between the loading and unloading steps. This is consistent with the expected behaviour of nitinol and clearly displays chronic outward force from the larger force required to compress the stent than to expand it. The COF of the stent increases with the link thickness.</li>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_chronic_outward_force.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
@@ -94,14 +94,14 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
     From the stent strain at the start and end of a single fatigue cycle, the mean and alternating, the mean and alternating strain were evaluated and plotted on a Goodman diagram. As the thickness of the link increased, the maximum mean and alternating strain of the design also increased, increasing the fatigue susceptibility.</li>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_goodman_diagram.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
     </figure>
 
     <figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <img src="images/FEA_link_thinkess_fatigue_results.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
   <figcaption>
     Reconstruction of the system time evolution by a neural network given the initial full representation
   </figcaption>
