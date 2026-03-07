@@ -7,14 +7,7 @@
 </head>
 <body>
 
-<h1>Machine-Learning Time-Dependent Density Functional Theory on a Lattice</h1>
-
-<figure class="centered-figure" style="text-align: center;">
-  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
-  <figcaption>
-    Reconstruction of the system time evolution by a neural network given the initial full representation
-  </figcaption>
-</figure>
+<h1>Finite Element Analysis of a Self-Expanding Nitinol Stent</h1>
     
 <h3>Project Context and Objective</h3>
 <p>
@@ -28,6 +21,14 @@ In this project, a non-linear finite element model of a self-expanding nitinol s
 <ol>
     <li>Geometry & Symmetry:
     The full stent consists of 12 repeating units. One of these units was modelled and periodic boundary conditions were applied to enforce the cylindrical symmetry of the stent unit. A rigid exterior crimper was used to simulate the crimping of the stent during deployment and operation during blood pressure cycles. A hard normal contact and frictionless tangential contact were applied between the outer stent surface and inner crimp surface.</li>
+    
+    <figure class="centered-figure" style="text-align: center;">
+  <img src="images/DensityMatrixPred_1timestep.png" alt="Full Representation" style="display:block; margin:auto; width:30%;">
+  <figcaption>
+    Reconstruction of the system time evolution by a neural network given the initial full representation
+  </figcaption>
+    </figure>
+    
     <li>Mesh Strategy:
     A structured hexahedral mesh was used with local refinements in the regions of high curvature. A mesh convergence study was performed on the maximum von Mises stress to ensure the results were mesh independent.</li>
     <li>Loading and Analysis Steps:
